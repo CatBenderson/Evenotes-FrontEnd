@@ -20,7 +20,7 @@ public class DAOEvento {
         cc = c.getConnection();
 
         try {
-            String sql = "insert into evento(titulo,fecha,horaInicio,horaFin,lugar,descripcion) values (?,?,?,?,?,?);";
+            String sql = "insert into evento(titulo,fecha,horaInicio,horaFin,lugar,descripcion,usuario) values (?,?,?,?,?,?,?);";
             stm=cc.prepareStatement(sql);
             stm.setString(1, ev.getTitulo());
             stm.setString(2, ev.getFecha());
@@ -28,6 +28,7 @@ public class DAOEvento {
             stm.setString(4, ev.getHoraFin());
             stm.setString(5, ev.getLugar());
             stm.setString(6, ev.getDescripcion());
+            stm.setString(7, ev.getUsuario());
 
             if (stm.executeUpdate()>0){
                 message = "Evento creado";
@@ -189,7 +190,7 @@ public class DAOEvento {
             return message;
         }
 
-        public static List<Evento> dameEventos(){
+        public static List<Evento> dameEventos(String usuario){
 
             Statement stm=null;
             ResultSet rs = null;
@@ -198,14 +199,19 @@ public class DAOEvento {
     
             cc = c.getConnection();
             try {
-                String sql = "select * from evento";
+                String sql = "select * from evento where usuario='"+usuario+"' ORDER BY fecha ASC , horaInicio ASC";
                 stm = (Statement) cc.createStatement();
                 rs = ((java.sql.Statement) stm).executeQuery(sql);
                 while (rs.next()) {
-                    Evento ev = new Evento(rs.getString("id"),
-                     rs.getString("titulo"), rs.getString("fecha"),
-                     rs.getString("horaInicio"),rs.getString("horaFin"),rs.getString("lugar"),
-                     rs.getString("descripcion"),rs.getString("usuario"));
+                    Evento ev = new Evento(
+                     rs.getString("id"),
+                     rs.getString("titulo"),
+                     rs.getString("fecha"),
+                     rs.getString("horaInicio"),
+                     rs.getString("horaFin"),
+                     rs.getString("lugar"),
+                     rs.getString("descripcion"),
+                     rs.getString("usuario"));
                      resultado.add(ev);
                 }
             } catch (Exception e) {

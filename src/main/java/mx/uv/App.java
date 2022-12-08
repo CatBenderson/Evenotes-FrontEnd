@@ -1,6 +1,9 @@
 package mx.uv;
 
 import static spark.Spark.*;
+
+import java.util.List;
+
 import com.google.gson.Gson;
 
 import javafx.event.Event;
@@ -28,9 +31,6 @@ public class App {
         });
         before((req, res) -> res.header("Access-Control-Allow-Origin", "*"));
 
-
-        
-
         post("/login", (req, res) -> {
             String datosFormulario = req.body();
             Usuario u=gson.fromJson(datosFormulario, Usuario.class);
@@ -53,12 +53,13 @@ public class App {
         });
 
         get("/main",(req,res)-> {
-            return uAux.getNombre();
+            return  gson.toJson(DAOEvento.dameEventos(uAux.getNombre()));
         });
 
         post("/main" ,(req,res)-> {
             String datosEvento = req.body();
             Evento ev = gson.fromJson(datosEvento, Evento.class);
+            ev.setUsuario(uAux.getNombre());
             String x= DAOEvento.crearEvento(ev);
             return x;
         });

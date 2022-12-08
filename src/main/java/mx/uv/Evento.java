@@ -74,5 +74,12 @@ public class Evento {
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
+
+    @Override
+    public String toString() {
+        return "Evento [id=" + id + ", titulo=" + titulo + ", fecha=" + fecha + ", horaInicio=" + horaInicio
+                + ", horaFin=" + horaFin + ", lugar=" + lugar + ", descripcion=" + descripcion + ", usuario=" + usuario
+                + "]";
+    }
     
 }
