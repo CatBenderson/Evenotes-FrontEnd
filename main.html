@@ -29,39 +29,39 @@
             <div class="container border border-dark rounded-lg bg-dark p-3 my-3">
                 <h4 class="text-light">Contenido</h4>
                 <form>
-                    <input title="Ingresar título" type="text" class=" pl-2 form control w-100 mb-3 border border-dark" style="background-color: gray; color: white; border-radius: 4px;"  placeholder="Titulo" autocomplete="off" id="titulo" required;">
-                    <textarea class="w-100 border border-dark pl-2" rows="3" id="descripcion" style="background-color: gray; color: white; border-radius: 4px; ;" placeholder="Descripción" required ></textarea>
+                    <input aria-label="Ingresa aquí el título de tu evento" type="text" class=" pl-2 form control w-100 mb-3 border border-dark" style="background-color: gray; color: white; border-radius: 4px;"  placeholder="Titulo" autocomplete="off" id="titulo" required;">
+                    <textarea aria-label="Ingresa aquí la descripción de tu evento" class="w-100 border border-dark pl-2" rows="3" id="descripcion" style="background-color: gray; color: white; border-radius: 4px; ;" placeholder="Descripción" required ></textarea>
                 </form>
     
             </div>
             <div class="container border border-dark rounded-lg bg-dark p-3 my-3">
                 <h4 class="text-light">Detalles</h4>
                 <form>
-                    <input title="Fecha" type="date" class="form control form-control-sm w-100 mb-3 border border-dark" style="background-color: gray; color: white; border-radius: 4px;" autocomplete="off" id="fecha" required;">
+                    <input aria-label="Ingresa aquí la fecha de tu evento en formato día, mes y año" type="date" class="form control form-control-sm w-100 mb-3 border border-dark" style="background-color: gray; color: white; border-radius: 4px;" autocomplete="off" id="fecha" required;">
                     <label for="horaInicio" class="text-light">Inicia</label>
-                    <input title="Hora inicio" type="time" class="form control form-control-sm w-50 mb-3 border border-dark ml-3 " style="background-color: gray; color: white; border-radius: 4px;" autocomplete="off" id="horaInicio" required;">
+                    <input aria-label="Ingresa aquí la hora de inicio de tu evento en formato, hora, minutos, am o pm" title="Hora inicio" type="time" class="form control form-control-sm w-50 mb-3 border border-dark ml-3 " style="background-color: gray; color: white; border-radius: 4px;" autocomplete="off" id="horaInicio" required;">
                     <div>
                         <label for="horaFin" class="text-light">Finaliza</label>
-                    <input title="Hora Fin" type="time" class="form control form-control-sm w-50 mb-3 border border-dark" style="background-color: gray; color: white; border-radius: 4px;" autocomplete="off" id="horaFin" required;">
+                    <input aria-label="Ingresa aquí la hora de fin de tu evento en formato, hora, minutos, am o pm" title="Hora Fin" type="time" class="form control form-control-sm w-50 mb-3 border border-dark" style="background-color: gray; color: white; border-radius: 4px;" autocomplete="off" id="horaFin" required;">
                     </div>
-                    <textarea class="w-100 border border-dark pl-2" rows="2" id="lugar" style="background-color: gray; color: white; border-radius: 4px;" placeholder="Lugar" required ></textarea>
+                    <textarea aria-label="Ingresa aquí el lugar de tu evento" class="w-100 border border-dark pl-2" rows="2" id="lugar" style="background-color: gray; color: white; border-radius: 4px;" placeholder="Lugar" required ></textarea>
                     <label class="text-danger w-75" text="" id="estadoEv"></label>
                 </form>
     
             </div>
             <div class=" row justify-content-center align-items-center col">
-                <button type="button" id="AgregaE" onclick='newEvent()' class=" btn btn-secondary rounded-lg w-50 mt-2 text-center bg-dark border-warning text-light mb-1 p-0"  style="font-size: calc(0.5em + 0.8vw)" >Agregar evento</button>
-                <button type="button" id="GuardaC" onclick='modifyEvent()' class=" btn btn-secondary rounded-lg w-50 mt-2 text-center bg-dark border-warning text-light mb-1 p-0"  style="font-size: calc(0.5em + 0.8vw); visibility:hidden;" >Guardar cambios</button>
-                <button type="button" id="Cancelar" onclick='cancelar()' class=" btn btn-secondary rounded-lg w-50 mt-2 text-center bg-dark border-warning text-light mb-1 p-0"  style="font-size: calc(0.5em + 0.8vw); visibility:hidden;" >Cancelar</button>
+                <button aria-label="Haz clic aquí para agregar tu evento" type="button" id="AgregaE" onclick='newEvent()' class=" btn btn-secondary rounded-lg w-50 mt-2 text-center bg-dark border-warning text-light mb-1 p-0"  style="font-size: calc(0.5em + 0.8vw)" >Agregar evento</button>
+                <button aria-label="Haz clic aquí para guardar los cambios de tu evento" type="button" id="GuardaC" onclick='modifyEvent()' class=" btn btn-secondary rounded-lg w-50 mt-2 text-center bg-dark border-warning text-light mb-1 p-0"  style="font-size: calc(0.5em + 0.8vw); visibility:hidden;" >Guardar cambios</button>
+                <button aria-label="Haz clic aquí para cancelar la edición" type="button" id="Cancelar" onclick='cancelar()' class=" btn btn-secondary rounded-lg w-50 mt-2 text-center bg-dark border-warning text-light mb-1 p-0"  style="font-size: calc(0.5em + 0.8vw); visibility:hidden;" >Cancelar</button>
             </div>
         </div>
-        <a href="login.html" class="text-important" style="color: black; "> <u>Cerrar sesión</u></a>
     </div>
     <!-- Right side -->
     <div class="col-sm-7">
         <div class="display-4 col-sm-6"> Mis eventos </div> 
-        <div id="conjuntoTarjetas">
+        <div aria-label="Aquí se encuentran todos tus eventos guardados" id="conjuntoTarjetas">
         </div>
+        <a aria-label="Haz clic aquí para cerrar sesión" href="https://catbenderson.github.io/Evenotes-FrontEnd/login.html" class="text-important" style="color: black;"> <u>Cerrar sesión</u></a>
     </div>
 
     <script >
