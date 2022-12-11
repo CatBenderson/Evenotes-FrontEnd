@@ -45,20 +45,20 @@
                     <input tabindex="11" aria-label="Ingresa aquí la hora de fin de tu evento en formato, hora, minutos, am o pm" title="Hora Fin" type="time" class="form control form-control-sm w-50 mb-3 border border-dark" style="background-color: gray; color: white; border-radius: 4px;" autocomplete="off" id="horaFin" required;">
                     </div>
                     <textarea tabindex="12" aria-label="Ingresa aquí el lugar de tu evento" class="w-100 border border-dark pl-2" rows="2" id="lugar" style="background-color: gray; color: white; border-radius: 4px;" placeholder="Lugar" required ></textarea>
-                    <label class="text-danger w-75" text="" id="estadoEv"></label>
+                    <label tabindex="14" class="text-danger w-75" text="" id="estadoEv"></label>
                 </form>
     
             </div>
             <div class=" row justify-content-center align-items-center col">
                 <button tabindex="13" aria-label="Haz clic aquí para agregar tu evento" type="button" id="AgregaE" onclick='newEvent()' class=" btn btn-secondary rounded-lg w-50 mt-2 text-center bg-dark border-warning text-light mb-1 p-0"  style="font-size: calc(0.5em + 0.8vw)" >Agregar evento</button>
-                <button tabindex="14" aria-label="Haz clic aquí para guardar los cambios de tu evento" type="button" id="GuardaC" onclick='modifyEvent()' class=" btn btn-secondary rounded-lg w-50 mt-2 text-center bg-dark border-warning text-light mb-1 p-0"  style="font-size: calc(0.5em + 0.8vw); visibility:hidden;" >Guardar cambios</button>
-                <button tabindex="15" aria-label="Haz clic aquí para cancelar la edición" type="button" id="Cancelar" onclick='cancelar()' class=" btn btn-secondary rounded-lg w-50 mt-2 text-center bg-dark border-warning text-light mb-1 p-0"  style="font-size: calc(0.5em + 0.8vw); visibility:hidden;" >Cancelar</button>
+                <button tabindex="15" aria-label="Haz clic aquí para guardar los cambios de tu evento" type="button" id="GuardaC" onclick='modifyEvent()' class=" btn btn-secondary rounded-lg w-50 mt-2 text-center bg-dark border-warning text-light mb-1 p-0"  style="font-size: calc(0.5em + 0.8vw); visibility:hidden;" >Guardar cambios</button>
+                <button tabindex="16" aria-label="Haz clic aquí para cancelar la edición" type="button" id="Cancelar" onclick='cancelar()' class=" btn btn-secondary rounded-lg w-50 mt-2 text-center bg-dark border-warning text-light mb-1 p-0"  style="font-size: calc(0.5em + 0.8vw); visibility:hidden;" >Cancelar</button>
             </div>
         </div>
     </div>
     <!-- Right side -->
     <div class="col-sm-7">
-        <div tabindex="16" class="display-4 col-sm-6"> Mis eventos </div> 
+        <div tabindex="17" class="display-4 col-sm-6"> Mis eventos </div> 
         <div id="conjuntoTarjetas">
         </div>
         <a aria-label="Haz clic aquí para cerrar sesión" href="https://catbenderson.github.io/Evenotes-FrontEnd/login.html" class="text-important" style="color: black;"> <u>Cerrar sesión</u></a>
@@ -116,7 +116,7 @@ function recuperaTarjetas(){
       method:"GET",
       url: 'https://evenotes-backend-production.up.railway.app/main',
   }).then((res)=>{
-        var aux=16
+        var aux=17
         var evento = res.data
         conjuntoTarjetas.innerHTML="";
         for (let i = 0; i < evento.length; i++) {

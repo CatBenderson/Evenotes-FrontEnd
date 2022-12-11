@@ -14,14 +14,14 @@
 <body class="m-0 vh-100 row justify-content-center align-items-center col" style="background-image: url('https://mobimg.b-cdn.net/v3/fetch/ab/ab6a4e1d70a49a2ae2d97c73545404c1.jpeg'); background-size:cover ;" >
     <div class="vh-100 vw-100 m-0 vh-100 row justify-content-center align-items-center" style="backdrop-filter: blur(10px);">
         <div class="container w-75 shadow-lg border border-light rounded-lg bg-light">
-            <header class="display-3 text-center mt-5" style="font-family: 'roboto', sans-serif;  font-size: calc(1em + 3vw) ; "> Registrarse</header>
+            <header tabindex="1" aria-label="Bienvenido a la pantalla de registro de Evenotes" class="display-3 text-center mt-5" style="font-family: 'roboto', sans-serif;  font-size: calc(1em + 3vw) ; "> Registrarse</header>
             <form class="text-center my-4">
-              <input aria-label="Ingresa aquí tu nombre de usuario"  id="uss" type="usuario" class="form control form-control-lg w-75 mb-3 border border-warning"  placeholder="Usuario" autocomplete="off">
-              <input aria-label="Ingresa aquí tu contraseña" id="pw" type="password" class="form control form-control-lg w-75 mb-4 border border-warning" placeholder="Contraseña" autocomplete="off">
-              <input aria-label="Confirma tu contraseña" id="pwConf" type="password" class="form control form-control-lg w-75 mb-4 border border-warning" placeholder="Confirma contraseña" autocomplete="off">
-              <label class="text-danger w-75" text="" id="error"></label>
-              <button aria-label="Presiona este botón para registrarte" type="button" onclick='onRegister()' class="btn btn-secondary rounded-lg w-25 text-center bg-warning border-warning text-dark mb-1 p-0"  style="font-size: calc(0.5em + 0.8vw)" >Registrar</button>
-              <p class="text-dark mx-auto text-center mb-3">¿Ya tienes cuenta? Inicia sesión<a aria-label="Inicia sesión aquí" href="https://catbenderson.github.io/Evenotes-FrontEnd/login.html" class="text-important" style="color: #0051A8"> aquí</a></p>
+              <input tabindex="2" aria-label="Ingresa aquí tu nombre de usuario"  id="uss" type="usuario" class="form control form-control-lg w-75 mb-3 border border-warning"  placeholder="Usuario" autocomplete="off">
+              <input tabindex="3" aria-label="Ingresa aquí tu contraseña" id="pw" type="password" class="form control form-control-lg w-75 mb-4 border border-warning" placeholder="Contraseña" autocomplete="off">
+              <input tabindex="4" aria-label="Confirma tu contraseña" id="pwConf" type="password" class="form control form-control-lg w-75 mb-4 border border-warning" placeholder="Confirma contraseña" autocomplete="off">
+              <label tabindex="6" class="text-danger w-75" text="" id="error"></label>
+              <button tabindex="5" aria-label="Haz clic aquí para registrarte" type="button" onclick='onRegister()' class="btn btn-secondary rounded-lg w-25 text-center bg-warning border-warning text-dark mb-1 p-0"  style="font-size: calc(0.5em + 0.8vw)" >Registrar</button>
+              <p class="text-dark mx-auto text-center mb-3">¿Ya tienes cuenta? Inicia sesión<a tabindex="7" aria-label="Haz clic aquí para iniciar sesión" href="https://catbenderson.github.io/Evenotes-FrontEnd/login.html" class="text-important" style="color: #0051A8"> aquí</a></p>
             </form> 
           </div>
     </div>
@@ -58,7 +58,7 @@
             x.innerHTML="Las contraseñas no coinciden"
           }
           }else if(usuario.value=="" || password.value=="" || passwordConf.value==""){
-            x.innerHTML="Campos obligatorios vacios"
+            x.innerHTML="Campos obligatorios vacíos"
           }
         
       }
